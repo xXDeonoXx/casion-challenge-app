@@ -15,6 +15,7 @@ const AppRoutes = () => {
         header: ({}) => {
           return <Header />;
         },
+        cardStyle: { backgroundColor: '#FFFFFF' },
       }}
     >
       <Stack.Screen

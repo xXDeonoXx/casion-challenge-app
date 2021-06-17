@@ -3,13 +3,16 @@ import { View, Text } from 'react-native';
 
 import CasinoLogo from '../../../assets/casion-logo.svg';
 
-import { MainContainer } from './styles';
+import { BannerImage, Container, MainContainer } from './styles';
 
 const index = () => {
+  const banner = require('../../../assets/home/main-banner.png');
+
   return (
     <MainContainer>
-      <Text>Home Screen</Text>
-      <CasinoLogo />
+      <Container>
+        <BannerImage source={banner} resizeMode={'contain'} />
+      </Container>
     </MainContainer>
   );
 };

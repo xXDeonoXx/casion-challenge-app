@@ -3,12 +3,14 @@ import { View, Text } from 'react-native';
 
 import CasinoLogo from '../../../assets/casion-logo.svg';
 
+import { MainContainer } from './styles';
+
 const index = () => {
   return (
-    <View>
+    <MainContainer>
       <Text>Home Screen</Text>
       <CasinoLogo />
-    </View>
+    </MainContainer>
   );
 };
 

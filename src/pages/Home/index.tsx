@@ -13,6 +13,7 @@ import {
   ThinLabel,
   BoldLabel,
 } from './styles';
+import NewsPreviewCard from '../../components/NewsPreviewCard';
 
 const index = () => {
   const banner = require('../../../assets/home/main-banner.png');
@@ -29,6 +30,11 @@ const index = () => {
           <ThinLabel>LEIA AGORA -{'>'}</ThinLabel>
         </FeaturedWrapper>
         <BoldLabel>Todas as notícias</BoldLabel>
+
+        <NewsPreviewCard />
+        <NewsPreviewCard />
+        <NewsPreviewCard />
+        <NewsPreviewCard />
       </Container>
     </MainContainer>
   );

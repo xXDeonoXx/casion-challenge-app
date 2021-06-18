@@ -2,27 +2,36 @@ import styled from 'styled-components/native';
 
 interface MainContainerProps {
   backgroundColor?: string;
-}
-
-interface LogoContainerProps {
-  logoAlignment?: 'flex-start' | 'center' | 'flex-end';
+  logoAlignment?: boolean;
 }
 
 export const MainContainer = styled.View<MainContainerProps>`
   align-items: center;
   width: 100%;
   height: 52px;
-  /* padding-top: 50px; */
   background-color: ${({ backgroundColor }) => backgroundColor || 'white'};
-  padding-left: 12px;
-  padding-right: 12px;
-  /* padding-top: 5px;
-  padding-bottom: 5px; */
+  padding-left: 24px;
+  padding-right: 24px;
+  flex-direction: row;
+  justify-content: ${({ logoAlignment }) =>
+    logoAlignment ? 'space-between' : 'center'};
 `;
 
-export const LogoContainer = styled.View<LogoContainerProps>`
+export const LogoContainer = styled.View`
   height: 100%;
   justify-content: center;
-  align-self: ${({ logoAlignment }) =>
-    logoAlignment ? logoAlignment : 'center'};
+`;
+
+export const BackButton = styled.TouchableHighlight`
+  justify-content: center;
+`;
+
+export const BackText = styled.Text`
+  font-size: 12px;
+  font-family: 'Inter-Regular';
+`;
+
+export const BackButtonText = styled.Text`
+  font-size: 12px;
+  font-family: 'PT-Serif-Italic';
 `;

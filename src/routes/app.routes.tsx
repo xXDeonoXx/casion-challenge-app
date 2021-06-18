@@ -1,14 +1,28 @@
-import { createStackNavigator } from '@react-navigation/stack';
+import {
+  CardStyleInterpolators,
+  createStackNavigator,
+} from '@react-navigation/stack';
 import React from 'react';
-import { View, Text } from 'react-native';
-import Home from '../pages/Home';
-import Header from '../components/Header';
+import { View } from 'react-native';
 import { useTheme } from 'styled-components';
 import DetailsScreen from '../pages/DetailsScreen';
+import Home from '../pages/Home';
 
 const AppRoutes = () => {
   const Stack = createStackNavigator();
   const theme = useTheme();
+
+  const animation = {
+    animation: 'spring',
+    config: {
+      stiffness: 1000,
+      damping: 500,
+      mass: 3,
+      overshootClamping: true,
+      restDisplacementThreshold: 0.01,
+      restSpeedThreshold: 0.01,
+    },
+  };
 
   return (
     <Stack.Navigator
@@ -18,26 +32,11 @@ const AppRoutes = () => {
         },
         // headerShown: false,
         cardStyle: { backgroundColor: '#FFFFFF' },
+        cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}
     >
-      <Stack.Screen
-        name={'Home'}
-        component={Home}
-        // options={{
-        //   header: () => {
-        //     return <Header />;
-        //   },
-        // }}
-      />
-      <Stack.Screen
-        name={'Details'}
-        component={DetailsScreen}
-        // options={{
-        //   header: () => {
-        //     return <Header logoAlignment={'flex-end'} />;
-        //   },
-        // }}
-      />
+      <Stack.Screen name={'Home'} component={Home} />
+      <Stack.Screen name={'Details'} component={DetailsScreen} />
     </Stack.Navigator>
   );
 };

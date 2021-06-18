@@ -4,6 +4,7 @@ import { View, Text } from 'react-native';
 import Home from '../pages/Home';
 import Header from '../components/Header';
 import { useTheme } from 'styled-components';
+import DetailsScreen from '../pages/DetailsScreen';
 
 const AppRoutes = () => {
   const Stack = createStackNavigator();
@@ -13,8 +14,9 @@ const AppRoutes = () => {
     <Stack.Navigator
       screenOptions={{
         header: ({}) => {
-          return <Header />;
+          return <View style={{ height: 50 }}></View>;
         },
+        // headerShown: false,
         cardStyle: { backgroundColor: '#FFFFFF' },
       }}
     >
@@ -24,6 +26,15 @@ const AppRoutes = () => {
         // options={{
         //   header: () => {
         //     return <Header />;
+        //   },
+        // }}
+      />
+      <Stack.Screen
+        name={'Details'}
+        component={DetailsScreen}
+        // options={{
+        //   header: () => {
+        //     return <Header logoAlignment={'flex-end'} />;
         //   },
         // }}
       />

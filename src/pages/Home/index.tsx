@@ -14,6 +14,7 @@ import {
   BoldLabel,
 } from './styles';
 import NewsPreviewCard from '../../components/NewsPreviewCard';
+import Header from '../../components/Header';
 
 const index = () => {
   const banner = require('../../../assets/home/main-banner.png');
@@ -21,6 +22,8 @@ const index = () => {
   return (
     <MainContainer>
       <Container>
+        <Header />
+
         <BannerImage source={banner} resizeMode={'contain'} />
         <FeaturedWrapper>
           <Label>DESTAQUE</Label>

@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 interface MainContainerProps {}
 
-export const MainContainer = styled.View`
+export const MainContainer = styled.TouchableOpacity`
   border-bottom-width: 1px;
   border-bottom-color: #6e798333;
   padding-bottom: 16px;

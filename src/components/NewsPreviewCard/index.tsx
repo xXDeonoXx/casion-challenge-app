@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View, Text } from 'react-native';
 import Label from '../Label';
@@ -12,8 +13,13 @@ import {
 
 const index = () => {
   const preview = require('../../../assets/home/preview.png');
+  const navigator = useNavigation();
   return (
-    <MainContainer>
+    <MainContainer
+      onPress={() => {
+        navigator.navigate('Details');
+      }}
+    >
       <PreviewImageWrapper>
         <PreviewImage source={preview} />
       </PreviewImageWrapper>

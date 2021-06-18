@@ -11,10 +11,9 @@ interface LogoContainerProps {
 export const MainContainer = styled.View<MainContainerProps>`
   align-items: center;
   width: 100%;
-  height: 100px;
-  padding-top: 50px;
+  height: 52px;
+  /* padding-top: 50px; */
   background-color: ${({ backgroundColor }) => backgroundColor || 'white'};
-  /* border: 1px solid blue; */
   padding-left: 12px;
   padding-right: 12px;
   /* padding-top: 5px;
@@ -22,7 +21,8 @@ export const MainContainer = styled.View<MainContainerProps>`
 `;
 
 export const LogoContainer = styled.View<LogoContainerProps>`
-  /* position: absolute; */
+  height: 100%;
+  justify-content: center;
   align-self: ${({ logoAlignment }) =>
     logoAlignment ? logoAlignment : 'center'};
 `;

@@ -1,5 +1,5 @@
 export default interface Publication {
-  id: string;
+  _id: string;
   title: string;
   subTitle: string;
   body: string;

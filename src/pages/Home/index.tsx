@@ -46,7 +46,7 @@ const index = () => {
         <BoldLabel>Todas as notícias</BoldLabel>
 
         {pubs.map((pub) => {
-          return <NewsPreviewCard key={pub.id} pub={pub} />;
+          return <NewsPreviewCard key={pub._id} pub={pub} />;
         })}
       </Container>
     </MainContainer>

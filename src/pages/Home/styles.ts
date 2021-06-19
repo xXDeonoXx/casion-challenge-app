@@ -11,11 +11,11 @@ export const BannerImage = styled.Image`
   width: 100%;
   height: auto;
   aspect-ratio: ${366 / 200};
+  margin-bottom: 16px;
 `;
 
-export const FeaturedWrapper = styled.View`
+export const FeaturedWrapper = styled.TouchableOpacity`
   margin-top: 18px;
-  margin-bottom: 16px;
 `;
 
 export const FeaturedMainText = styled.Text`

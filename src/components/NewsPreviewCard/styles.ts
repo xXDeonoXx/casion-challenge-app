@@ -12,7 +12,10 @@ export const MainContainer = styled.TouchableOpacity`
   align-items: center;
 `;
 
-export const PreviewImage = styled.Image``;
+export const PreviewImage = styled.Image`
+  width: 96px;
+  height: 96px;
+`;
 
 export const PreviewImageWrapper = styled.View`
   border-left-width: 3px;

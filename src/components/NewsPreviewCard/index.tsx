@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View, Text } from 'react-native';
+import Publication from '../../models/Publication';
 import Label from '../Label';
 
 import {
@@ -11,21 +12,26 @@ import {
   PreviewImageWrapper,
 } from './styles';
 
-const index = () => {
-  const preview = require('../../../assets/home/preview.png');
+interface Props {
+  pub: Publication;
+}
+
+const index: React.FC<Props> = ({ pub }) => {
   const navigator = useNavigation();
   return (
     <MainContainer
       onPress={() => {
-        navigator.navigate('Details');
+        navigator.navigate('Details', {
+          pub,
+        });
       }}
     >
       <PreviewImageWrapper>
-        <PreviewImage source={preview} />
+        <PreviewImage source={{ uri: pub.image_url }} />
       </PreviewImageWrapper>
       <InfoWrapper>
-        <Label>LIFESTYLE</Label>
-        <Info>Descubra o sabor de rosquinha que melhor te representa!</Info>
+        <Label>{pub.category}</Label>
+        <Info>{pub.title}</Info>
       </InfoWrapper>
     </MainContainer>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text } from 'react-native';
 import Label from '../../components/Label';
 
@@ -15,9 +15,20 @@ import {
 } from './styles';
 import NewsPreviewCard from '../../components/NewsPreviewCard';
 import Header from '../../components/Header';
+import Publication from '../../models/Publication';
+import api from '../../services/api';
 
 const index = () => {
+  const [pubs, setPubs] = useState<Publication[]>([]);
   const banner = require('../../../assets/home/main-banner.png');
+
+  useEffect(() => {
+    const func = async () => {
+      const response = await api.get('/publication');
+      setPubs(response.data);
+    };
+    func();
+  }, []);
 
   return (
     <MainContainer>
@@ -34,10 +45,9 @@ const index = () => {
         </FeaturedWrapper>
         <BoldLabel>Todas as notícias</BoldLabel>
 
-        <NewsPreviewCard />
-        <NewsPreviewCard />
-        <NewsPreviewCard />
-        <NewsPreviewCard />
+        {pubs.map((pub) => {
+          return <NewsPreviewCard key={pub.id} pub={pub} />;
+        })}
       </Container>
     </MainContainer>
   );
